@@ -7,7 +7,7 @@
 #include <string.h>
 #include "main.h"
 
-//bokang  office3
+//bokang  home4
 #define DISCHG_TIME_CALC
 
 //2019.11.13
