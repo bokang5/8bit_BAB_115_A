@@ -1,0 +1,29 @@
+---- I2C_Data Matches (6 in 2 files) ----
+Main.c:1117
+	NTC_Temp=I2C_Data[9];
+	if(NTC_Temp>=0xDD){NTC_Temp1=((0x100-NTC_Temp)-1);}
+	else{NTC_Temp1=NTC_Temp+100;}
+Main.c:1170
+			Curr1=I2C_Data[12];                                    //0x10h FullCap Register 
+			Curr2=I2C_Data[13];
+			D_Current=(((       ((Curr1)<<8) +(Curr2&&0xff))/3124) );	// <-- 4.06 --> 3.49 --> 3.78 --> 3.65            3124
+		//	D_Current=Curr1;
+Main.c:1177
+			Curr1=I2C_Data[13];
+			Curr2=I2C_Data[12];
+			D_Current=((0x10000-((Curr1<<8)+Curr2))/3.65);	// <-- 4.06 --> 3.49 --> 3.78 --> 3.65
+			//-----------------------------------------------//
+Main.c:1423
+			{I2C_Data[i]=I2C_RxData();}
+			I2C_STOP();
+		}
+Main.c:1432
+			Percentgauge=I2C_Data[5];
+		     #else
+		     Percentgauge=I2C_Data[5];
+		     #endif
+			RepCap=Percentgauge*98;
+Main.h:127
+uint8_t I2C_Data[34];
+uint8_t A_Rx_Command[64];
+uint8_t B_Rx_Command[64];

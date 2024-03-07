@@ -1,0 +1,9 @@
+---- JAY_LABEL_TEST Matches (2 in 2 files) ----
+Main.c (e:\project\...\fw):2217
+			#ifdef JAY_LABEL_TEST
+			Tx_DATA[6] = 'Q';
+			#else
+Main.h (e:\project\...\fw):20
+//#define  JAY_LABEL_TEST        //if define Open   IVQ  
+//#define JAY_FUEL_GAUGE_RESET
+
